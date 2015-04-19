@@ -84,6 +84,9 @@ DT_activity_imputed$day = factor(DT_activity_imputed$day, levels = c("weekday", 
 
 steps_interval_2 = aggregate(steps ~ interval + day, DT_activity_imputed, mean)
 library(lattice)
+xyplot(steps ~ interval | factor(day), data = steps_interval_2, aspect = 1/2, 
+    type = "l")
+
 
 ```
 
